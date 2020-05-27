@@ -1,0 +1,20 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "tscver": "yarn tsc -v",
+    "build": "rimraf build && yarn tsc",
+    "tsc": "tsc",
+    "gql:gen": "rimraf ./src/graphql/types && apollo client:codegen --endpoint=http://localhost:4000 --target=typescript --includes=./src/graphql/**/*.ts --tagName=gql --globalTypesFile=./src/ApiTypes.ts types"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2",
+    "typescript": "^3.9.3"
+  },
+  "dependencies": {
+    "apollo-boost": "^0.4.9",
+    "graphql": "^15.0.0"
+  }
+}
